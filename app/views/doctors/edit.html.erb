@@ -1,2 +1,13 @@
-<h1>Doctors#edit</h1>
-<p>Find me in app/views/doctors/edit.html.erb</p>
+<h1>Edit Doctor</h1>
+
+<%= form_for @doctor do |f| %>
+
+  <%= f.label :doctor_name %>
+  <%= f.text_field :doctor_name, required: true, placeholder: 'Dr. (Last Name)'%>
+
+  <%= f.label :doctor_type %>
+  <%= f.text_field :doctor_type, required: true, placeholder: 'Doctor Expertise' %>
+
+  <%= f.submit %>
+
+<% end %>

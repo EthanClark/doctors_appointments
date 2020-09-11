@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-  before_action :
+  before_action :set_patient, only: [:show, :edit, :update, :destroy]
   def index
     @patients = Patient.all
   end
@@ -14,7 +14,7 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
-      redirect_to patient_path(@billboard.id)
+      redirect_to patient_path(@patient.id)
     else
       render :new
     end
@@ -33,13 +33,13 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
-    redirect_to patient_path
+    redirect_to patients_path
   end
 
   private
 
   def set_patient
-    @patient = Billboard.find(params[:id])
+    @patient = Patient.find(params[:id])
   end
 
   def patient_params

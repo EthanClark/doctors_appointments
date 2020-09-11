@@ -1,2 +1,14 @@
-<h1>Patients#new</h1>
-<p>Find me in app/views/patients/new.html.erb</p>
+<h1>Add Patient</h1>
+
+<%= form_for @patient do |f| %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, require: true, placeholder: 'First Name' %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, require: true, placeholder: 'Last Name' %>
+
+  <%= f.submit %>
+
+<% end %>
+

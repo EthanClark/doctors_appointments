@@ -1,7 +1,8 @@
 class DoctorsController < ApplicationController
-  before_action :set_doctor, only: [:show, :edit, :update, :update, :destroy]
+  before_action :set_doctor, only: [:show, :edit, :update, :destroy]
+
   def index
-    @doctor = Doctor.all
+    @doctors = Doctor.all
   end
 
   def show
@@ -17,7 +18,7 @@ class DoctorsController < ApplicationController
   end
 
   def create
-    @doctor = Doctor.new(docter_params)
+    @doctor = Doctor.new(doctor_params)
     if @doctor.save
       redirect_to doctor_path(@doctor)
     else render :new
@@ -35,7 +36,7 @@ class DoctorsController < ApplicationController
 
   def destroy
     @doctor = Doctor.find(params[:id])
-    doctor.destroy
+    @doctor.destroy
     redirect_to root_path
   end
 

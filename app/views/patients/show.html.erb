@@ -1,2 +1,9 @@
-<h1>Patients#show</h1>
-<p>Find me in app/views/patients/show.html.erb</p>
+<h1> <%= @patient.full_name %> </h1>
+
+<%= link_to 'Edit Name', edit_patient_path(@patient) %>
+<br/>
+<br/>
+<%= link_to 'Delete Patient', patient_path(@patient.id), method: :delete%>
+<br/>
+<br/>
+<%= link_to 'Patient List', patients_path() %>
