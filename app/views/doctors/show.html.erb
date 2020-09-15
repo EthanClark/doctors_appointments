@@ -1,10 +1,16 @@
 <h1> <%= @doctor.doctor_name %> </h1>
 <br/>
 <h2> Expertise: <%= @doctor.doctor_type.capitalize %> </h2>
+
+<%# <% @doctors.each do |doctor|%> 
+  <%= link_to 'Appointments', doctor_appointments_path(@doctor) %>
+<%# <% end %> 
+
 <%= link_to 'Edit Doctor Info', edit_doctor_path(@doctor) %>
 <br/>
 <br/>
 <%= link_to 'Delete Doctor', doctor_path(@doctor), method: :delete %>
+<br/>
 <br/>
 <br/>
 <%= link_to 'Back To Doctor List', doctors_path() %>

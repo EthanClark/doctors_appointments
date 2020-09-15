@@ -1,6 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :set_doctor
-  before_action :set_patient
+  # before_action :set_patient
   before_action :set_appointment, only: [:show, :edit, :update, :destory]
   def index
     @appointments = @doctor.appointments
@@ -49,7 +49,7 @@ class AppointmentsController < ApplicationController
     def set_doctor
       @doctor = Doctor.find(params[:doctor_id])
     end
-    def set_patient 
-      @patient = Patient.find(params[:patient_id])
-    end
+    # def set_patient 
+    #   @patient = Patient.find(params[:patient_id])
+    # end
 end
