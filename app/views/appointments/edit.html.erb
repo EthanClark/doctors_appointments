@@ -1,2 +1,13 @@
-<h1>Appointments#edit</h1>
-<p>Find me in app/views/appointments/edit.html.erb</p>
+<h1>Edit Appointments</h1>
+
+<%= form_for [@doctor, @appointment] do |f| %>
+
+  <%= f.label :appointment_type %>
+  <%= f.text_field :appointment_type, require: true, placeholder: 'Type Of Appointment' %>
+
+  <%= f.label :appointment_time %>
+  <%= f.text_field :appointment_time, require: true, placeholder: 'Appointment Time' %>
+
+  <%= f.submit %>
+
+<% end %>

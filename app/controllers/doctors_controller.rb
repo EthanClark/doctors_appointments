@@ -45,6 +45,6 @@ class DoctorsController < ApplicationController
       @doctor = Doctor.find (params[:id])
     end
     def doctor_params
-      params.require(:doctor).permit(:doctor_name,:doctor_type)
+      params.require(:doctor).permit(:doctor_name, :doctor_type)
     end
 end

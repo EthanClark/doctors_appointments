@@ -19,7 +19,6 @@ class PatientsController < ApplicationController
       render :new
     end
   end
-
   def edit
   end
 
@@ -33,7 +32,7 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
-    redirect_to patients_path
+    redirect_to doctor_patients_path
   end
 
   private
